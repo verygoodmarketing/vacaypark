@@ -126,7 +126,6 @@ export class ReservationService {
   deleteReservation(id: string) {
     return this.user$.pipe(
       switchMap((user) => {
-        console.log('bingo');
         if (!user) return throwError(() => new Error('User not authenticated'));
         const reservationDocRef = doc(
           this.firestore,
